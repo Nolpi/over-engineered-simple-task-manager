@@ -1,0 +1,17 @@
+{
+  "name": "task-manager",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c green,blue \"npm run start:dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "prisma:migrate": "npm run prisma:migrate -w backend",
+    "prisma:generate": "npm run prisma:generate -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

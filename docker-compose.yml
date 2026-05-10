@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: "file:/data/dev.db"
+      FRONTEND_ORIGIN: "http://localhost:3000"
+      PORT: "3001"
+    ports:
+      - "3001:3001"
+    volumes:
+      - task-data:/data
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: "http://localhost:3001"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:3001"
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  task-data:

@@ -41,20 +41,6 @@ npm run dev
 
 See `QUICK_START.md` for detailed setup instructions.
 
-## Project Structure
-
-```
-task manager/
-├── backend/              # NestJS REST API
-│   ├── src/tasks/       # Task module (controller, service, DTO)
-│   ├── prisma/          # Database schema & migrations
-│   └── Dockerfile
-├── frontend/            # Next.js App
-│   ├── app/            # App router pages
-│   └── Dockerfile
-├── docker-compose.yml   # Multi-container config
-└── docs/               # Documentation
-```
 
 ## Task Model
 

@@ -1,4 +1,4 @@
-# Task Manager
+# over engineered simple task manager
 
 A simple, minimal CRUD task manager built with **Next.js** (frontend), **NestJS** (backend), **Prisma** (ORM), and **SQLite** (database). Runs in Docker.
 
